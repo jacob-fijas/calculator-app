@@ -1,10 +1,28 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { evaluate } from 'mathjs'
 import Button from './Button'
 
+const keySet = new Set(['0','1','2','3','4','5','6','7','8','9','+','-','/','*','(',')', '.'])
+
 const Calculator = () => {
     const [input, setInput] = useState('')
+
+    // add event listener for key press
+    useEffect(() => {
+        window.addEventListener('keydown', onKeyPress)
+        return () => window.removeEventListener('keydown', onKeyPress)
+    })
+
+    function onKeyPress({ key }) {
+        if (keySet.has(key)) {
+            onPress(key)
+        } else if (key === 'Backspace') {
+            back()
+        } else if (key === '=' || key === 'Enter') {
+            submit()
+        }
+    }
 
     // remove last char
     function back() {

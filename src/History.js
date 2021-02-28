@@ -1,28 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React from 'react'
 
-const History = () => {
-    const [history, setHistory] = useState([])
-
-    // get history on mount
-    useEffect(() => {
-        async function getHistory() {
-            const { data } = await axios.get('/api/history')
-            setHistory(data)
-        }
-        getHistory()
-    }, [])
-
-    return (
-        <div>
-            {history.map((line, i) => (
-                <div style={{ opacity: getOpacity(i) }}>
-                    {line}
-                </div>
-            ))}
-        </div>
-    )
-}
+const History = ({ history }) => (
+    <div>
+        {history.map((line, i) => (
+            <div style={{ opacity: getOpacity(i) }}>
+                {line}
+            </div>
+        ))}
+    </div>
+)
 
 const getOpacity = (i) => {
     switch (i) {

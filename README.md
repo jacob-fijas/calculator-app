@@ -18,4 +18,4 @@ From the root of the project, cd into the server folder and run **npm install** 
 From the root of the project, run **npm build** to build static client files. Once built, run **npm start** to start the webserver.
 
 ### 6. Use the webapp
-Once the app is running, it can be interacted with at localhost:5000.
+Once the app is running, it can be interacted with at localhost:3000.

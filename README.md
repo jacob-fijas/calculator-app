@@ -6,7 +6,7 @@
 Clone the repositroy using the **git clone** command or download the code from github.
 
 ### 2. Install Node.js / NPM
-Download and install Node.js from the Node ![website](https://nodejs.org/en/download/).
+Download and install Node.js from the Node [website](https://nodejs.org/en/download/).
 
 ### 3. install client dependencies
 From the root of the project, run the command **npm install** to install dependencies.

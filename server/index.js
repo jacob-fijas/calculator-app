@@ -31,4 +31,5 @@ app.use((req, res) => {
 const server = http.createServer(app)
 const io = require('socket.io')(server)
 
-server.listen(5000, () => console.log('server started on port 5000'))
+const PORT = process.env.PORT || 5000
+server.listen(PORT, () => console.log('server started on port 5000'))

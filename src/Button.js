@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const ButtonDiv = styled.button`
     cursor: pointer;
     backgroundColor: grey;
-
+    width: 100px;
     &:hover {
         backgroundColor: blue;
     }

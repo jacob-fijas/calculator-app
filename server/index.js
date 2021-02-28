@@ -20,15 +20,15 @@ app.get('/api/history', function (req, res) {
   res.send(getHistory())
 })
 
-app.use(express.static(path.join(__dirname, "..", "build")));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "..", "build")))
+app.use(express.static("public"))
 
 app.use((req, res) => {
-  res.sendFile(path.join(__dirname, "..", "build", "index.html"));
-});
+  res.sendFile(path.join(__dirname, "..", "build", "index.html"))
+})
 
 // start server and websocket
 const server = http.createServer(app)
-const io = require('socket.io')(server);
+const io = require('socket.io')(server)
 
 server.listen(5000, () => console.log('server started on port 5000'))

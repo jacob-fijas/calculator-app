@@ -47,14 +47,13 @@ const Calculator = () => {
     ]
 
     return (
-        <div>
-            <div>
-                Input: {input}
+        <div style={{ display: 'inline-block' }} >
+            <div className='screen' >
+                {input}
             </div>
-            <div>
+            <div style={{ width: '400px' }}>
                 {layout.map(row => (
                     <div style={{ flexDirection: 'row' }}>
-                        test
                         {row.map(key => <Button {...key} />)}
                     </div>
                 ))}
